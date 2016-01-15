@@ -7,10 +7,9 @@ class PagesController < ApplicationController
     end
 
   end
-    
 
   def number_game
-    guess = params[:purple_hippo].to_i
+    guess = params[:numero].to_i
     correct_answer = 42
 
     if guess == correct_answer
@@ -20,27 +19,40 @@ class PagesController < ApplicationController
     else 
       @message = "You guessed too high"
     end
+  end
 
-
-
-
-    # counter = 0
-    # the_right_answer = rand(100)
-
-    # 10.times do
-    # @number = params[:number]
-    # counter = counter + 1
-    #   if @number == the_right_answer
-    #      "You Win! You guessed it correctly in #{counter} tries!"
-    #     exit
-    #   elsif @number > the_right_answer 
-    #     @message = "Too big, try again"
-    #   else 
-    #     @message = "Too small, try again"
-    #   end
-    # end
-    # @message = "You lose"
+  def number_game_form
+  
 
   end
+
+  def url_example
+    @message = params[:wildcard]
+
+  end
+
+  def get_form
+
+  end
+
+  def submit_form
+    @message = params[:message]
+  end
+
+  def number_answer
+    guess = params[:message].to_i
+    correct_answer = 42
+
+    if guess == correct_answer
+      @message = "You got it right"
+    elsif guess < correct_answer
+      @message = "You guessed too low"
+    else 
+      @message = "You guessed too high"
+    end
+  end
+
+
+
     
 end

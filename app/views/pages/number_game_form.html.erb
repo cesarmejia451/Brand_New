@@ -1,0 +1,13 @@
+<h1>Guess a Number!</h1>
+
+<%= form_tag '/submit_number_form', method: :post do %>
+  <div>
+    <%= label_tag :message %>
+    <%= text_field_tag :message %>
+  </div>
+  <div>
+    <%= submit_tag 'Enter Number' %>
+  </div>
+
+
+<% end %>
